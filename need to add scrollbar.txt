@@ -1,0 +1,29 @@
+need to add scrollbar
+
+just check ke link component par javi joiye
+
+can write event name beside images 
+show enlarged image when user clicks on it
+
+add back button everywhere
+
+in team section add linked in icon and also put new meta else remove meta 
+
+try to make contact page smaller
+
+remove unnnecessay imports and code
+
+make heading and button component 
+
+need to add required fields in event detail page
+
+can also add image based on number selected
+
+
+add organizer info in event detail pg description with dropdown \\
+btn radius in contact
+
+seat selection font size 
+
+vite 
+

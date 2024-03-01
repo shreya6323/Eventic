@@ -1,1 +1,3 @@
 check the responsiveness of different devices
+
+need to disappear navbar if user scrolls down 

@@ -1,0 +1,12 @@
+req or srs
+user
+data model
+wireframe
+er diagram
+competitors
+aim what we area solving
+who are the users
+functionalitites  search pay feedback connect
+                  admin dashboard create-event analysis of feedback,analysis of tickets 
+concert sports tech events 
+
