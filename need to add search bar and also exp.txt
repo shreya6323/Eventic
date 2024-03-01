@@ -1,0 +1,12 @@
+need to add search bar and also export feature in admin all events page
+
+webcam chalu thai toh bandh nthi thato
+
+
+can add drag and drop in the image section (baki ....)
+
+i want that je option selected hoi tenah par grey color hoi and in expanded agar ej pachu select kariye toh collapse thai javu joiye
+
+qr scanner barabar chaltu nathi
+
+need to make modal forms and form for create event 
