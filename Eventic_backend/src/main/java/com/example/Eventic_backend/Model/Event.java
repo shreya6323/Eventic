@@ -7,11 +7,17 @@ import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.persistence.UniqueConstraint;
+import jakarta.persistence.criteria.Fetch;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -31,8 +37,9 @@ public class Event {
     
     @Id
     @GeneratedValue
-    String eventid;
+    String id;
 
+    @Indexed(unique = true)
     String eventname;
 
     String location;
@@ -44,6 +51,10 @@ public class Event {
 
     @Temporal(TemporalType.TIME)
     private LocalTime eventTime;
+
+   @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name = "admin_id")
+    private Admin admin;
 
     private BigDecimal price; //change to indainn ruppes
  
