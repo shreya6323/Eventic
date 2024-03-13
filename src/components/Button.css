@@ -1,4 +1,4 @@
-.outlined-button {
+/* .outlined-button {
   background-color: black;
   border: 2px solid black;
   border-radius: 5px;
@@ -11,5 +11,24 @@
 
 .outlined-button:hover {
   background-color: black;
-  color: #3c82ff;
+  color: #adb0ea;
+} */
+
+
+.outlined-button {
+  background-color: transparent;
+  color: white;
+  padding: 10px 15px;
+  border: solid 2px white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
+
+.outlined-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0px 20px #adb0ea;
+}
+
+

@@ -1,6 +1,6 @@
 .title {
     font-size: 4vw;
-    color:rgb(175,175,179);
+    color:white;
     background-color: heading;
     text-align: center;
     margin-bottom: 50px;
@@ -27,7 +27,8 @@
   .service_box_item {
     flex: 0 0 calc(25% - 1rem); /* Set the initial size for 4 items in a row */
     padding: 2rem;
-    border: 2px solid #3c82ff; /* Add border style here */
+    background-color: transparent;
+    border: 2px solid   #adb0ea; /* Add border style here */
     border-radius: 25px;
     transition: transform 0.3s ease-in-out;
     margin-bottom: 1rem; /* Add margin between rows */
@@ -36,7 +37,7 @@
   
   .service_box_item:hover {
     transform: translateY(-30px);
-    box-shadow: 0 0px 20px #3c82ff; 
+    box-shadow: 0 0px 20px  #adb0ea; 
   }
   
   .service_box_item img {

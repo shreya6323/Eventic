@@ -1,84 +1,159 @@
-import React from 'react';
-import { Swiper } from 'swiper/react';
-import 'swiper/swiper-bundle.css'; // Import the bundle, adjust the path according to your setup
-import { SwiperSlide } from 'swiper/react'; // Import SwiperSlide from 'swiper/react'
-import './SwiperClass.css';
-import slide_image_1 from '../assets/img.jpeg';
-import slide_image_2 from '../assets/img_2.jpeg';
-import slide_image_3 from '../assets/img_3.jpeg';
-import slide_image_4 from '../assets/img_4.jpeg';
-import slide_image_5 from '../assets/img_5.jpeg';
-import slide_image_6 from '../assets/img6.jpeg';
-import { IonIcon } from '@ionic/react';
-import { ticketOutline } from 'ionicons/icons';
+// import React from 'react';
+// import { Swiper } from 'swiper/react';
+// import 'swiper/swiper-bundle.css'; // Import the bundle, adjust the path according to your setup
+// import { SwiperSlide } from 'swiper/react'; // Import SwiperSlide from 'swiper/react'
+// import './SwiperClass.css';
+// import { Link } from 'react-router-dom';
+// import slide_image_1 from '../assets/img.jpeg';
+// import slide_image_2 from '../assets/img_2.jpeg';
+// import slide_image_3 from '../assets/img_3.jpeg';
+// import slide_image_4 from '../assets/img_4.jpeg';
+// import slide_image_5 from '../assets/img_5.jpeg';
+// import slide_image_6 from '../assets/img6.jpeg';
+// import { IonIcon } from '@ionic/react';
+// import { ticketOutline } from 'ionicons/icons';
 
 
-// Install Swiper modules
-import {EffectCoverflow,Pagination,Navigation} from 'swiper/modules';
+// // Install Swiper modules
+// import {EffectCoverflow,Pagination,Navigation} from 'swiper/modules';
 
-function SwiperClass() {
-  return (
+// function SwiperClass() {
+//   return (
   
-   <>
+//    <>
   
                    
-  <p className="heading">Upcoming Events...</p>
-     <Swiper
+//   <p className="heading">Upcoming Events...</p>
+//      <Swiper
     
-     effect={'coverflow'}
-     grabCursor={true}
-     centeredSlides={true}
+//      effect={'coverflow'}
+//      grabCursor={true}
+//      centeredSlides={true}
      
-     loop={true}
-     spaceBetween={-950}
-     slidesPerview={5}
-     coverflowEffect={{
-        rotate:0,
-        stretch:0,
-        depth:400,
-        modifier:4.5,
-     }}
+//      loop={true}
+//      spaceBetween={-950}
+//      slidesPerview={5}
+//      coverflowEffect={{
+//         rotate:0,
+//         stretch:0,
+//         depth:400,
+//         modifier:4.5,
+//      }}
     
-     pagination={{el:'.swiper-pagination',clickable:true}}
-     navigation={
-        {
-            nextEl:'swiper-button-next',
-            prevEl:'swiper-button-prev',
-            clickable:true,
+//      pagination={{el:'.swiper-pagination',clickable:true}}
+//      navigation={
+//         {
+//             nextEl:'swiper-button-next',
+//             prevEl:'swiper-button-prev',
+//             clickable:true,
+//         }
+//      }
+//      modules={[EffectCoverflow,Pagination,Navigation]}
+
+//      className='swiper_container' 
+//       >
+
+//      <SwiperSlide>
+//      <Link to="/event-details">
+//      <img src={slide_image_1} alt="slide_image"/>
+//       </Link>
+     
+//      </SwiperSlide>
+
+//      <SwiperSlide>
+//       <img src={slide_image_2} alt="slide_image"/>
+//      </SwiperSlide>
+
+//      <SwiperSlide>
+//       <img src={slide_image_3} alt="slide_image"/>
+//      </SwiperSlide>
+
+//      <SwiperSlide>
+//       <img src={slide_image_4} alt="slide_image"/>
+//      </SwiperSlide>
+
+//      <SwiperSlide>
+//       <img src={slide_image_5} alt="slide_image"/>
+//      </SwiperSlide>
+
+//      <SwiperSlide>
+//       <img src={slide_image_6} alt="slide_image"/>
+//      </SwiperSlide>
+//      <div className='slider-controler'>
+//         </div>
+//      </Swiper>
+//       </>
+//   );
+// }
+
+// export default SwiperClass;
+import React, { useState, useEffect } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/swiper-bundle.css';
+import './SwiperClass.css';
+import { Link } from 'react-router-dom';
+import { IonIcon } from '@ionic/react';
+import { ticketOutline } from 'ionicons/icons';
+import {EffectCoverflow,Pagination,Navigation} from 'swiper/modules';
+
+
+
+function SwiperClass() {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    // Fetch event data from your backend API
+    const fetchEvents = async () => {
+      try {
+        const response = await fetch('/api/events'); // Adjust the endpoint according to your backend API
+        if (response.ok) {
+          const eventData = await response.json();
+          setEvents(eventData);
+        } else {
+          console.error('Failed to fetch event data');
         }
-     }
-     modules={[EffectCoverflow,Pagination,Navigation]}
+      } catch (error) {
+        console.error('Error fetching event data:', error);
+      }
+    };
 
-     className='swiper_container' 
+    fetchEvents();
+  }, []);
+
+  return (
+    <>
+      <p className="heading">Upcoming Events...</p>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        loop={true}
+        spaceBetween={-950}
+        slidesPerView={5} // Corrected prop name
+        coverflowEffect={{
+          rotate: 0,
+          stretch: 0,
+          depth: 400,
+          modifier: 4.5,
+        }}
+        pagination={{ el: '.swiper-pagination', clickable: true }}
+        navigation={{
+          nextEl: 'swiper-button-next',
+          prevEl: 'swiper-button-prev',
+          clickable: true,
+        }}
+        modules={[EffectCoverflow, Pagination, Navigation]}
+        className="swiper_container"
       >
-
-     <SwiperSlide>
-      <img src={slide_image_1} alt="slide_image"/>
-     </SwiperSlide>
-
-     <SwiperSlide>
-      <img src={slide_image_2} alt="slide_image"/>
-     </SwiperSlide>
-
-     <SwiperSlide>
-      <img src={slide_image_3} alt="slide_image"/>
-     </SwiperSlide>
-
-     <SwiperSlide>
-      <img src={slide_image_4} alt="slide_image"/>
-     </SwiperSlide>
-
-     <SwiperSlide>
-      <img src={slide_image_5} alt="slide_image"/>
-     </SwiperSlide>
-
-     <SwiperSlide>
-      <img src={slide_image_6} alt="slide_image"/>
-     </SwiperSlide>
-     <div className='slider-controler'>
-        </div>
-     </Swiper>
-      </>
+        {events.map((event) => (
+          <SwiperSlide key={event.eventid}>
+            <Link to={`/event-details/${event.eventname}`}>
+              <img src={`data:image/png;base64,${event.poster}`}  alt="Event Poster" />
+            </Link>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </>
   );
 }
 

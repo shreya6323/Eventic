@@ -16,11 +16,6 @@ export default function SearchBar()
             
          
          <button className='search-button'><BsSearch   size={15}/></button>
-        
-
-           </Link>
-
-         
-      
+           </Link>      
     )
 }

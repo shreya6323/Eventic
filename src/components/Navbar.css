@@ -6,12 +6,33 @@
   font-style: normal;
 }
 
+
 a {
   text-decoration: none;
 }
 
 
-.login-button {
+.eventic_logo
+{
+  color: #adb0ea;
+}
+
+/* Animate the line from the left */
+/* .nav-links:hover{
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: transform 0.3s ease;
+} */
+
+/* .login-button {
     background-color: transparent;
     color: white;
     padding: 10px 15px;
@@ -20,26 +41,85 @@ a {
     cursor: pointer;
     font-size: 16px;
   }  
+   */
+
+   .login-button {
+    background-color: transparent;
+    color: white;
+    padding: 10px 15px;
+    border: solid 2px #555;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left:15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
   
   .login-button:hover {
-    background-color: #3c82ff;
-    border: none;
+    transform: translateY(-5px);
+    box-shadow: 0 0px 20px #adb0ea;
   }
-.logo {
-  font-family: 'Porcelain';
-  font-size: 35px; /* Default font size */
-  color: white;
- 
-
- }
- .icon {
-  
-  position: absolute; /* Set position to absolute for positioning */
-  top: 10px; /* Adjust the top position as needed */
-  left: 20px; /* Adjust the left position as needed */
+  .profile-icon {
+    margin-left:150px;
+    background-color: transparent; /* Transparent background */
+    border: none; /* No border */
+    cursor: pointer; /* Cursor on hover */
 }
+
+.profile-icon:focus {
+    outline: none; /* Remove focus outline */
+}
+
+.profile-icon img {
+    width: 20px; /* Adjust the width as needed */
+    height: 20px; /* Adjust the height as needed */
+    border-radius: 50%; /* Rounded corners for circular shape */
+}
+
+/* Adjust the size of the icon */
+.profile-icon svg {
+    width: 30px; /* Adjust the width as needed */
+    height: 30px; /* Adjust the height as needed */
+    color: #333; /* Change the color of the icon */
+}
+
+/* Style on hover */
+.profile-icon:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+
+  .eventic-logo
+  {
+   color: #adb0ea;
+  }
+ .logo-container{
+
+  display: flex;
+  flex-direction: row;
+  width: 100px;
+  height:50px;
+  margin-right:100px;
+ }
+ 
+  .logo {
+    font-family: 'Porcelain';
+    font-size: 35px; /* Default font size */
+    color: white;
+   }
+   .icon {
+    position: absolute; /* Set position to absolute for positioning */
+    top: 10px; /* Adjust the top position as needed */
+    left: 20px; /* Adjust the left position as needed */
+ 
+ 
+   
+  }
+  
 .navbar {
-  background: black;
+  background-color:transparent;
+ margin-right:160px;
   height: 70px;
   display: flex;
   justify-content: center;
@@ -56,10 +136,11 @@ a {
 }
 .navbar-container {
   display: flex;
+
   justify-content: center;
   align-items: center;
   height: 20px;
-  max-width: 1500px;
+  max-width: 500px;
 }
 
 .nav-menu {
@@ -76,7 +157,10 @@ a {
   height: 30px;
 }
 
-.nav-links {
+
+
+
+/* .nav-links { 
   color: #fff;
   display: flex;
   font-family:Arial, Helvetica, sans-serif;
@@ -84,12 +168,47 @@ a {
   text-decoration: none;
   padding: 0.5rem 2rem ;
   height: 100%;
-}
+} */
 
-.nav-links:hover {
+/* .nav-links:hover {
   color:#3c82ff;
     transition: all 0.2s ease-out;
+  }  */
+
+  .nav-links {
+    color: #fff;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+    height: 100%;
+    position: relative; /* Add position relative for absolute positioning of the ::before pseudo-element */
   }
+  
+  .nav-links::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #adb0ea;
+    transition: width 0.6s ease; /* Transition effect for the line */
+  }
+  
+  .nav-links:hover::before {
+    width: 80%; /* Expand the width of the line on hover */
+    transform-origin: left; /* Set the transform origin to start from the left */
+  }
+  
+  /* .nav-links:hover {
+ 
+  transition: all 0.2s ease-out;
+  border-bottom: 2px solid white; 
+   
+  } */
+
 
 .fa-bars {
   color: #fff;
@@ -115,6 +234,7 @@ a {
   }
   .nav-menu {
     display: flex;
+    background-color: rgba(255, 255, 255, 0.5);
     flex-direction: column;
     width: 100%;
     height: 60vh;
@@ -129,9 +249,9 @@ a {
 
   .nav-menu.active {
     /* Set left to 50% to position from the left edge */
-    left: 70vw;
+    left: 80vw;
     font-size: 25px;
-  background-color: black;
+  /* background-color: black; */
    padding: 30px;
     /* Translate back by half of the menu width to center it */
     transform: translateX(-50%);
@@ -141,13 +261,7 @@ a {
     /* Other styles specific to smaller screens */
   }
  
-  
-  .nav-links:hover {
-   
-    color: #3c82ff;
-    border-radius: 0;
-  }
-
+ 
   .navbar-logo {
     position: absolute;
     top: 0;
@@ -170,3 +284,43 @@ a {
 
   
 }
+
+.login-options {
+
+  list-style: none;
+  width: 120px;
+  height: auto;
+  border: 2px solid #555 ;
+  border-radius: 5px;
+
+  margin: 0;
+}
+
+.login-options li {
+  text-decoration: none; /* Adjust spacing between options */
+}
+
+.login-option-link {
+  display: block;
+  width: 120px; /* Set desired width */
+  height: 40px; /* Set desired height */
+  line-height: 40px; /* Center text vertically */
+  text-align: center;
+  background-color: transparent; /* Background color */
+  color: #333; /* Text color */
+  text-decoration: none;
+   
+  transition: background-color 0.3s ease; 
+}
+
+.login-option-link:hover {
+ color: #adb0ea; 
+  
+}
+
+
+
+
+
+
+

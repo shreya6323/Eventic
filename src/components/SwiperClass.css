@@ -2,7 +2,7 @@
 .swiper_container {
   width: 100%; /* Set the width of the container */
   display: flex;
-  background-color: #0c1222;
+  /*background-color: #0c1222;*/
   justify-content: center; /* Center the content horizontally */
   align-items: center;
     height: auto;
@@ -13,8 +13,8 @@
 
   .heading {  /*this need to be fixed make it reusable */
     font-size: 4vw;
-    color:rgb(175,175,179);
-    background-color: #0c1222;
+    color:white;
+    /* background-color: #0c1222; */
     text-align: center;
   padding-top: 50px;
     /* Align the text center */

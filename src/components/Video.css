@@ -1,7 +1,9 @@
 /* Your CSS file */
-body{
-  background-color: black;
-}
+/*body{
+ background-color: #2234ae;
+  background-image: linear-gradient(315deg, #2234ae 0%, #191714 74%);
+  
+}*/
 /* Style for the container */
 .box {
   width: 35vw; /* 50% of the parent element */
@@ -10,7 +12,7 @@ body{
   -webkit-background-size: cover;
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 10px 20px #3c82ff;
+  box-shadow: 0 10px 20px  #3c82ff; /*changed*/
   margin-right: 3vw;
 
 /* Adding a more pronounced shadow */
@@ -31,7 +33,7 @@ body{
   border-radius: 50%; /* Initial shape as a circle */
   background-size: cover;
   background-position: center center;
-  box-shadow: 0 10px 20px #3c82ff;
+  box-shadow: 0px 10px 20px  #adb0ea; /*changed*/
 
 /* Adding a more pronounced shadow */
   overflow: hidden; /* Ensure the content doesn't overflow */
