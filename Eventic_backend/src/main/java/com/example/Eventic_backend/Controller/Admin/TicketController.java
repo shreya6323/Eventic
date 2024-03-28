@@ -70,11 +70,11 @@ private AttendanceRepository attendanceRepository;
 @Autowired
 private AttandanceService attandanceService;
 
-  @Value("${razorpay.keyId}")
-    private String keyId;
+//   @Value("${razorpay.keyId}")
+//     private String keyId;
 
-    @Value("${razorpay.keySecret}")
-    private String keySecret;
+//     @Value("${razorpay.keySecret}")
+//     private String keySecret;
 
     @GetMapping(value="/api/pay/{amount}",produces="application/json")
     public ResponseEntity<?> initiatePayment(@PathVariable("amount") Double amount) {
@@ -107,11 +107,13 @@ private AttandanceService attandanceService;
            Ticket ticket = new Ticket();
            Event event = eventRepository.findByEventname(eventname);
        
-           int seats = event.getSeats();
-           System.out.println(seats);
-           event.setSeats(seats-1);
+          // int seats = event.getSeats();
+        //   System.out.println(seats);
+          // event.setSeats(seats-1);
+           int sold = event.getSold_tickets();
+           event.setSold_tickets(sold+1);
            System.out.println(event.getEventname());
-           System.out.println(seats);
+        //   System.out.println(seats);
            Optional<User> user = userRepository.findByUserName(username);
         // //    System.out.println(event.getEventname());
            eventRepository.save(event);
