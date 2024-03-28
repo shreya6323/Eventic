@@ -37,6 +37,20 @@
     <version>1.4.5</version>
 </dependency>
 
+<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-mail -->
+
+
+
+<!-- https://mvnrepository.com/artifact/jakarta.mail/jakarta.mail-api -->
+<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.xml.bind</groupId>
+			<artifactId>jakarta.xml.bind-api</artifactId>
+		</dependency>
+
 
 <dependency>
     <groupId>com.google.zxing</groupId>

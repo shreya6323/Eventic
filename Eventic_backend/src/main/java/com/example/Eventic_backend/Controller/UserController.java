@@ -19,6 +19,10 @@ public class UserController {
     @Autowired
     private AdminRepository adminRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+    
+
     @PostMapping("/api/admin/register")
     public ResponseEntity register(@RequestBody Admin admin) {
        try {
@@ -67,4 +71,27 @@ public class UserController {
             }
 
     }
+
+    @GetMapping("/api/user/{username}")
+    public ResponseEntity getUserInfo(@PathVariable String username) {
+   
+            try {
+                // Authentication authentication = authenticationManager.authenticate(
+                //         new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+    
+                // SecurityContextHolder.getContext().setAuthentication(authentication);
+    
+                User save = userRepository.findByUserName(username)
+                    .orElseThrow(() -> new RuntimeException("User not found"));
+    
+
+                   
+    
+                return ResponseEntity.ok().body(save);
+            } catch (Exception ex) {
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid username or password !");
+            }
+
+    }
+
 }

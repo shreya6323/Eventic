@@ -24,10 +24,11 @@ public class Feedback {
     String id;
 
     String description;
+    
     String rating;
 
 
-      @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "event_id")
    Event event;
 
